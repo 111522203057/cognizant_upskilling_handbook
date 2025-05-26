@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bootstrap 5 Complete Exercises</title>
+  <!-- Bootstrap 5 CSS CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Bootstrap Icons CDN (for Exercise 17) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+  <style>
+    body {
+      padding-bottom: 100px; /* For fixed footer visibility */
+    }
+    .fixed-footer {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background-color: #0d6efd;
+      color: white;
+      text-align: center;
+      padding: 0.5rem 0;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container my-4">
+
+    <!-- 1. Setting Up Bootstrap -->
+    <section id="setup">
+      <h2>1. Setting Up Bootstrap 5</h2>
+      <p class="lead">Basic Bootstrap setup using CDN.</p>
+      <div class="alert alert-primary" role="alert">
+        Hello, Bootstrap 5 is working!
+      </div>
+    </section>
+
+    <hr />
+
+    <!-- 3. Fundamentals of Responsive Grid Layout -->
+    <section id="responsive-grid">
+      <h2>3. Responsive Grid Layout</h2>
+      <div class="container border p-3">
+        <div class="row text-white text-center">
+          <!-- Columns stack on xs, 2 per row md, 3 per row lg -->
+          <div class="col-12 col-md-6 col-lg-4 bg-primary p-3 mb-2">Column 1</div>
+          <div class="col-12 col-md-6 col-lg-4 bg-secondary p-3 mb-2">Column 2</div>
+          <div class="col-12 col-md-6 col-lg-4 bg-success p-3 mb-2">Column 3</div>
+        </div>
+      </div>
+    </section>
+
+    <hr />
+
+    <!-- 4. Column Layouts and Grid Classes -->
+    <section id="column-layouts">
+      <h2>4. Column Layouts</h2>
+      <h5>4.1 Two-column layout with sidebar</h5>
+      <div class="row border mb-3">
+        <aside class="col-md-3 bg-light p-3">Sidebar (col-md-3)</aside>
+        <main class="col-md-9 bg-white p-3">Content area (col-md-9)</main>
+      </div>
+
+      <h5>4.2 Four equal-width columns</h5>
+      <div class="row text-white text-center">
+        <div class="col-sm-3 bg-info p-3">Col 1</div>
+        <div class="col-sm-3 bg-warning p-3">Col 2</div>
+        <div class="col-sm-3 bg-danger p-3">Col 3</div>
+        <div class="col-sm-3 bg-success p-3">Col 4</div>
+      </div>
+    </section>
+
+    <hr />
+
+    <!-- 5. Alignment and Reordering in Grid -->
+    <section id="alignment-reordering">
+      <h2>5. Alignment and Reordering</h2>
+      <div class="row justify-content-center align-items-center border" style="height:100px;">
+        <div class="col-3 bg-primary text-white text-center p-3 order-md-2">Order 2 on md+</div>
+        <div class="col-3 bg-secondary text-white text-center p-3 order-md-1">Order 1 on md+</div>
+      </div>
+    </section>
+
+    <hr />
+
+    <!-- 6. Responsive Flexbox Utilities -->
+    <section id="flexbox-utilities">
+      <h2>6. Responsive Flexbox Utilities</h2>
+
+      <h5>6.1 Navbar with d-flex</h5>
+      <nav class="d-flex flex-column flex-md-row justify-content-between align-items-center bg-light p-3 mb-3 border rounded">
+        <div class="mb-2 mb-md-0 fw-bold">Community Portal</div>
+        <div>
+          <a href="#" class="me-3">Home</a>
+          <a href="#" class="me-3">Events</a>
+          <a href="#">Contact</a>
+        </div>
+      </nav>
+
+      <h5>6.2 Card layout with justify-content-between and align-items-center</h5>
+      <div class="d-flex justify-content-between align-items-center border p-3 rounded">
+        <div>Card Content Left</div>
+        <button class="btn btn-primary">Action</button>
+      </div>
+    </section>
+
+    <hr />
+
+    <!-- 7. Typography -->
+    <section id="typography">
+      <h2>7. Typography</h2>
+      <h1 class="display-1">Display 1 Heading</h1>
+      <p class="lead">This is a lead paragraph using Bootstrap's lead class.</p>
+      <p class="text-muted">Muted text example.</p>
+      <p class="fw-bold">Bold text example.</p>
+      <p class="text-uppercase">Uppercase text</p>
+      <p class="text-lowercase">LOWERCASE text</p>
+      <p class="text-capitalize">capitalize text</p>
+    </section>
+
+    <hr />
+
+    <!-- 8. Forms -->
+    <section id="forms">
+      <h2>8. Forms</h2>
+
+      <h5>8.1 Registration form</h5>
+      <form>
+        <div class="mb-3">
+          <label for="nameInput" class="form-label">Name</label>
+          <input type="text" class="form-control" id="nameInput" placeholder="Your Name" />
+        </div>
+        <div class="mb-3">
+          <label for="emailInput" class="form-label">Email address</label>
+          <input type="email" class="form-control" id="emailInput" placeholder="name@example.com" />
+        </div>
+        <div class="form-check mb-3">
+          <input class="form-check-input" type="checkbox" id="termsCheck" />
+          <label class="form-check-label" for="termsCheck">Agree to terms</label>
+        </div>
+        <button type="submit" class="btn btn-primary">Register</button>
+      </form>
+
+      <h5 class="mt-4">8.2 Login form using form-floating</h5>
+      <form class="w-50">
+        <div class="form-floating mb-3">
+          <input type="email" class="form-control" id="floatingEmail" placeholder="name@example.com" />
+          <label for="floatingEmail">Email address</label>
+        </div>
+        <div class="form-floating mb-3">
+          <input type="password" class="form-control" id="floatingPassword" placeholder="Password" />
+          <label for="floatingPassword">Password</label>
+        </div>
+        <button class="btn btn-success" type="submit">Login</button>
+      </form>
+    </section>
+
+    <hr />
+
+    <!-- 9. Buttons -->
+    <section id="buttons">
+      <h2>9. Buttons</h2>
+
+      <h5>9.1 Contextual buttons</h5>
+      <button class="btn btn-primary me-2">Primary</button>
+      <button class="btn btn-secondary me-2">Secondary</button>
+      <button class="btn btn-success me-2">Success</button>
+      <button class="btn btn-danger me-2">Danger</button>
+      <button class="btn btn-warning me-2">Warning</button>
+      <button class="btn btn-info me-2">Info</button>
+      <button class="btn btn-light me-2">Light</button>
+      <button class="btn btn-dark me-2">Dark</button>
+
+      <h5 class="mt-3">9.2 Button groups and toggle buttons</h5>
+      <div class="btn-group" role="group" aria-label="Basic example">
+        <button type="button" class="btn btn-outline-primary">Left</button>
+        <button type="button" class="btn btn-outline-primary">Middle</button>
+        <button type="button" class="btn btn-outline-primary">Right</button>
+      </div>
+
+      <div class="btn-group mt-3" role="group" aria-label="Toggle button group">
+        <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off" />
+        <label class="btn btn-outline-success" for="btncheck1">Toggle 1</label>
+
+        <input type="checkbox" class="btn-check" id="btncheck2" autocomplete="off" />
+        <label class="btn btn-outline-success" for="btncheck2">Toggle 2</label>
+      </div>
+    </section>
+
+    <hr />
+
+    <!-- 10. Navbars and Navigation -->
+   
