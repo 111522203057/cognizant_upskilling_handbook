@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Community Event Portal</title>
+  <style>
+    /* Basic styles for event cards */
+    .event-card {
+      border: 1px solid #ccc;
+      margin: 10px;
+      padding: 15px;
+      border-radius: 8px;
+      max-width: 300px;
+    }
+    .hidden { display: none; }
+    #loadingSpinner { display: none; }
+  </style>
+</head>
+<body>
+
+  <h1>Local Community Event Portal</h1>
+
+  <div>
+    <label for="categoryFilter">Filter by category:</label>
+    <select id="categoryFilter">
+      <option value="">All</option>
+      <option value="Music">Music</option>
+      <option value="Workshop">Workshop</option>
+      <option value="Sports">Sports</option>
+    </select>
+  </div>
+
+  <input type="text" id="searchInput" placeholder="Search by event name..." />
+
+  <div id="eventsContainer"></div>
+
+  <h2>Register for an Event</h2>
+  <form id="registrationForm">
+    <input type="text" name="name" placeholder="Your Name" required />
+    <input type="email" name="email" placeholder="Your Email" required />
+    <select name="event" required></select>
+    <button type="submit" id="registerBtn">Register</button>
+  </form>
+
+  <div id="message"></div>
+
+  <div id="loadingSpinner">Loading events...</div>
+
+  <script src="main.js"></script>
+</body>
+</html>
