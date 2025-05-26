@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Complete CSS Example</title>
+  <!-- Link to external stylesheet -->
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Google font import -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- Banner with ID selector -->
+  <header id="mainHeader">
+    <h1 style="color: red;">Welcome to the Portal</h1> <!-- Inline style for red heading -->
+    <img src="https://via.placeholder.com/600x300" alt="Banner Image" class="banner-img" />
+  </header>
+
+  <!-- Navigation menu with list and class -->
+  <nav>
+    <ul class="nav-menu">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Event cards demonstrating class selector and spacing -->
+  <section class="eventCard">
+    <h3>Community Event</h3>
+    <p>Join us for a day of fun and learning.</p>
+  </section>
+
+  <section class="eventCard">
+    <h3>Charity Run</h3>
+    <p>Run for a cause and help the community.</p>
+  </section>
+
+  <!-- Multi-column news article -->
+  <section class="news-article">
+    <h2>Community News</h2>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vel sem id nunc faucibus gravida. 
+      Curabitur a orci ut erat ultricies pulvinar.
+    </p>
+    <p>
+      Mauris rhoncus purus eget orci vestibulum dapibus. Duis malesuada arcu in lacus varius tincidunt.
+    </p>
+  </section>
+
+  <!-- Table with zebra striping -->
+  <table>
+    <thead>
+      <tr>
+        <th>Event</th>
+        <th>Date</th>
+        <th>Location</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Community Meeting</td>
+        <td>June 15</td>
+        <td>Town Hall</td>
+      </tr>
+      <tr>
+        <td>Festival</td>
+        <td>July 20</td>
+        <td>Central Park</td>
+      </tr>
+      <tr>
+        <td>Charity Run</td>
+        <td>August 10</td>
+        <td>Riverfront</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Form inputs to demonstrate outline -->
+  <form>
+    <label for="name">Name:</label><br />
+    <input type="text" id="name" /><br /><br />
+    
+    <label for="comments">Comments:</label><br />
+    <textarea id="comments"></textarea><br /><br />
+    
+    <label for="choice">Choice:</label><br />
+    <select id="choice">
+      <option>Option 1</option>
+      <option>Option 2</option>
+    </select>
+  </form>
+
+  <!-- Elements to show visibility vs display -->
+  <div class="hidden-visibility">This text is hidden but space remains.</div>
+  <div class="hidden-display">This text is hidden and space is removed.</div>
+
+</body>
+</html>
