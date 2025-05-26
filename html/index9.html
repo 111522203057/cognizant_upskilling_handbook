@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Debug Example</title>
+  <style>
+    #box {
+      width: 200px;
+      height: 200px;
+      background-color: red;
+      margin: auto;
+      /* Bug: should be centered horizontally */
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Debug Me</h2>
+  <div id="box"></div>
+
+  <script>
+    console.log("Script started");
+
+    function greetUser(name) {
+      let greeting = "Hello, " + name;
+      console.log(greeting);
+    }
+
+    greetUser("Dev");
+
+    // Intentional error:
+    nonExistentFunction(); // This will trigger an error
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Find Nearby Events</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #eef2f7;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .container {
+            background: #fff;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 0 10px #ccc;
+            max-width: 500px;
+            margin: auto;
+        }
+
+        button {
+            background-color: #28a745;
+            color: white;
+            padding: 12px 18px;
+            font-size: 16px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        .output {
+            margin-top: 20px;
+            font-size: 1.1em;
+            color: #333;
+        }
+
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Find Events Near You</h2>
+    <button onclick="findNearbyEvents()">Find Nearby Events</button>
+
+    <div class="output" id="locationOutput"></div>
+</div>
+
+<script>
+    function findNearbyEvents() {
+        const output = document.getElementById("locationOutput");
+
+        if (!navigator.geolocation) {
+            output.innerHTML = "<span class='error'>Geolocation is not supported by your browser.</span>";
+            return;
+        }
+
+        output.textContent = "Locating...";
+
+        const options = {
+            enableHighAccuracy: true,
+            timeout: 10000,
+            maximumAge: 0
+        };
+
+        navigator.geolocation.getCurrentPosition(
+            (position) => {
+                const lat = position.coords.latitude;
+                const lon = position.coords.longitude;
+                output.innerHTML = `
+                    <strong>Coordinates Found:</strong><br>
+                    Latitude: ${lat.toFixed(6)}<br>
+                    Longitude: ${lon.toFixed(6)}
+                `;
+            },
+            (error) => {
+                switch (error.code) {
+                    case error.PERMISSION_DENIED:
+                        output.innerHTML = "<span class='error'>Permission denied. Please allow location access.</span>";
+                        break;
+                    case error.POSITION_UNAVAILABLE:
+                        output.innerHTML = "<span class='error'>Location unavailable.</span>";
+                        break;
+                    case error.TIMEOUT:
+                        output.innerHTML = "<span class='error'>Location request timed out.</span>";
+                        break;
+                    default:
+                        output.innerHTML = "<span class='error'>An unknown error occurred.</span>";
+                        break;
+                }
+            },
+            options
+        );
+    }
+</script>
+
+</body>
+</html>
